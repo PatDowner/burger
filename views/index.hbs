@@ -10,7 +10,7 @@
           <label for="burger">Burger Name</label>
           <input type="text" class="form-control" id="burger">
         </div>
-        <button type="submit" id="addGrocery" class="btn btn-primary">Add Grocery</button>
+        <button type="submit" id="addBurger" class="btn btn-primary">Add Burger</button>
       </form>
     </div>
   </div>
@@ -19,14 +19,14 @@
     <div class="col-md-6">
       <ul id="notDevoured" class="list-group">
         <h2>Not Devoured</h2>
-        {{#each groceries}}
+        {{#each burgers}}
         {{#unless this.devoured}}
         <li id="{{ this.id }}" class="list-group-item">
           <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">{{ this.name }}</h5>
             <button
               data-name="{{ this.name }}"
-              class="devour btn btn-success">Devour It!</button>
+              class="devoured btn btn-success">Devour It!</button>
           </div>
         </li>
         {{/unless}}
@@ -36,7 +36,7 @@
     <div class="col-md-6">
       <ul id="devoured" class="list-group">
         <h2>Devoured</h2>
-        {{#each groceries}}
+        {{#each burgers}}
         {{#if this.devoured}}
         <li id="{{ this.id }}" class="list-group-item">
           <div class="d-flex w-100 justify-content-between">
