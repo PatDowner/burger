@@ -1,13 +1,27 @@
-<div class="jumbotron">
-  <h1 class="display-4">Burgers Up</h1>
-  <p class="lead">This is a simple application to keep track of burger orders and whether or not they have already been devoured.</p>
+<div class="row">
+  <div class="header col-12 col-md-3">
+    <img src="./burger.jpg" alt="cheeseburger with onion, pickles, tomato, and lettuce" class="burger">
+  </div>
+
+  <div class="header col-12 col-md-6">
+    <div class="jumbotron">
+      <h1 id="title" class="display-4">Eat-Da-Burger!</h1>
+      <p class="lead">This is a simple application to keep track of burger you'd like to try and whether or not you have
+        already devoured one.</p>
+    </div>
+  </div>
+  <div class="header d-none d-md-block col-md-3">
+    <img src="./burger.jpg" alt="cheeseburger with onion, pickles, tomato, and lettuce" class="burger">
+  </div>
+
 </div>
+
 <div class="container">
   <div class="row">
     <div class="col-md-12">
       <form>
         <div class="form-group">
-          <label for="burger">Burger Name</label>
+          <label for="burger"><h2>Burger Name</h2></label>
           <input type="text" class="form-control" id="burger">
         </div>
         <button type="submit" id="addBurger" class="btn btn-primary">Add Burger</button>
@@ -24,9 +38,7 @@
         <li id="{{ this.id }}" class="list-group-item">
           <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">{{ this.name }}</h5>
-            <button
-              data-name="{{ this.name }}"
-              class="devoured btn btn-success">Devour It!</button>
+            <button data-name="{{ this.name }}" class="devoured btn btn-success">Devour It!</button>
           </div>
         </li>
         {{/unless}}
