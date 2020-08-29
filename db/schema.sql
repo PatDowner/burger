@@ -9,3 +9,10 @@ CREATE TABLE burgers (
   name VARCHAR(30) UNIQUE NOT NULL,
   devoured BOOL NOT NULL
 );
+
+USE burger_db;
+
+INSERT INTO burgers (name, devoured)
+VALUES ('A Burger', false),
+  ('B Burger', false),
+  ('C Burger', true);
