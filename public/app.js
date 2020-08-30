@@ -2,7 +2,7 @@ document.getElementById('addBurger').addEventListener('click', event => {
   event.preventDefault()
 
   axios.post('/api/burgers', {
-    name: document.getElementById('burger').value,
+    name: document.getElementById('burgerName').value,
     devoured: false
   })
     .then(({ data }) => {
@@ -11,15 +11,15 @@ document.getElementById('addBurger').addEventListener('click', event => {
       burgerElem.id = data.id
       burgerElem.innerHTML = `
        <div class="d-flex w-100 justify-content-between">
-         <h5 class="mb-1">${document.getElementById('burger').value}</h5>
+         <h5 class="mb-1">${document.getElementById('burgerName').value}</h5>
          <button 
-          data-name="${document.getElementById('burger').value}"
+          data-name="${document.getElementById('burgerName').value}"
           class="devoured btn btn-success">Devour It!</button>
        </div>
       `
       document.getElementById('notDevoured').append(burgerElem)
 
-      document.getElementById('burger').value = ''
+      document.getElementById('burgerName').value = ''
     })
     .catch(err => console.error(err))
 })
@@ -36,7 +36,7 @@ document.addEventListener('click', event => {
         burgerElem.innerHTML = `
        <div class="d-flex w-100 justify-content-between">
          <h5 class="mb-1">${event.target.dataset.name}</h5>
-         <button class="btn btn-danger remove">remove</button>
+<button class="btn btn-danger remove"><i aria-hidden="true" class="fas fa-trash-alt" title="delete"></i><span class="sr-only">delete</span></button>
        </div>
       `
         document.getElementById('devoured').append(burgerElem)

@@ -1,16 +1,16 @@
 <div class="row">
-  <div class="header col-12 col-md-3">
+  <div class="header col-12 col-sm-3">
     <img src="./burger.jpg" alt="cheeseburger with onion, pickles, tomato, and lettuce" class="burger">
   </div>
 
-  <div class="header col-12 col-md-6">
+  <div class="header col-12 col-sm-6">
     <div class="jumbotron">
       <h1 id="title" class="display-4">Eat-Da-Burger!</h1>
-      <p class="lead">This is a simple application to keep track of burger you'd like to try and whether or not you have
+      <p id="subtitle" class="lead">This is a simple application to keep track of burgers you'd like to try and whether or not you have
         already devoured one.</p>
     </div>
   </div>
-  <div class="header d-none d-md-block col-md-3">
+  <div class="header d-none d-sm-block col-sm-3">
     <img src="./burger.jpg" alt="cheeseburger with onion, pickles, tomato, and lettuce" class="burger">
   </div>
 
@@ -18,13 +18,17 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-12">
       <form>
         <div class="form-group">
-          <label for="burger"><h2>Burger Name</h2></label>
-          <input type="text" class="form-control" id="burger">
-        </div>
+          <label id="burgerLabel" for="burger"><h2>Burger Name: </h2></label>
+          <p>
+
+          <input id="burgerName" type="text" class="form-control col-12 col-sm-6 col-lg-4" placeholder="e.g. Bacon Cheeseburger" id="burger"
+          >
         <button type="submit" id="addBurger" class="btn btn-primary">Add Burger</button>
+          </p>
+        </div>
       </form>
     </div>
   </div>
@@ -53,7 +57,7 @@
         <li id="{{ this.id }}" class="list-group-item">
           <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">{{ this.name }}</h5>
-            <button class="btn btn-danger remove">remove</button>
+            <button class="btn btn-danger remove"><i aria-hidden="true" class="fas fa-trash-alt" title="delete"></i><span class="sr-only">delete</span></button>
           </div>
         </li>
         {{/if}}

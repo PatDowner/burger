@@ -1,3 +1,11 @@
+body {
+  background-color: rgb(255, 234, 210);
+}
+
+.container-fluid {
+  padding: 0px;
+}
+
 .header {
   padding: 0px;
   margin-bottom: 20px;
@@ -10,15 +18,31 @@
 }
 
 .jumbotron {
+  background-color: rgb(252, 175, 86);
   padding: 10px 20px;
-  /* padding-bottom: 10px; */
   margin-bottom: 0px;
   height: 100%;
 }
 
-/* shrink to avoid line breaks before switch to small screen size */
+#addBurger {
+  margin-top: 5px;
+}
+
+/* first text shrink to avoid line breaks */
+
 @media only screen and (max-width: 820px) {
   #title {
     font-size: 50px;
+  }
+}
+
+/* second text shrink to avoid line breaks and image distortion */
+
+@media only screen and (max-width: 720px) {
+  #title {
+    font-size: 42px;
+  }
+  #subtitle {
+    font-size: 15px
   }
 }
